@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8080/v1/domains
+    body:
+      encoding: UTF-8
+      string: '{"name":"domain-by-name.com"}'
+    headers:
+      User-Agent:
+      - pir5/0.1.0 (+https://github.com/pir5/pir5-rb; ruby2.6.4)
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer test
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - application/json; charset=UTF-8
+      vary:
+      - Origin
+      date:
+      - Sun, 01 Sep 2019 15:15:00 GMT
+      content-length:
+      - '5'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: 'null
+
+'
+    http_version: 
+  recorded_at: Sun, 01 Sep 2019 15:15:00 GMT
+- request:
+    method: get
+    uri: http://localhost:8080/v1/domains?name=domain-by-name.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pir5/0.1.0 (+https://github.com/pir5/pir5-rb; ruby2.6.4)
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer test
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - application/json; charset=UTF-8
+      vary:
+      - Origin
+      date:
+      - Sun, 01 Sep 2019 15:15:00 GMT
+      content-length:
+      - '122'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '[{"id":2,"name":"domain-by-name.com","master":"","last_check":0,"type":"","notified_serial":0,"account":"","records":[]}]
+
+'
+    http_version: 
+  recorded_at: Sun, 01 Sep 2019 15:15:00 GMT
+recorded_with: VCR 5.0.0

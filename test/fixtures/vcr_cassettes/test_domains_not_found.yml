@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:8080/v1/domains?name=domains-not-found.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - pir5/0.1.0 (+https://github.com/pir5/pir5-rb; ruby2.6.4)
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer test
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - application/json; charset=UTF-8
+      vary:
+      - Origin
+      date:
+      - Sun, 01 Sep 2019 15:15:01 GMT
+      content-length:
+      - '26'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '"domains does not exists"
+
+'
+    http_version: 
+  recorded_at: Sun, 01 Sep 2019 15:15:01 GMT
+recorded_with: VCR 5.0.0

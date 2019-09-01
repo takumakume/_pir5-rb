@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8080/v1/domains
+    body:
+      encoding: UTF-8
+      string: '{"name":"create-domain-duplicate-entry.com"}'
+    headers:
+      User-Agent:
+      - pir5/0.1.0 (+https://github.com/pir5/pir5-rb; ruby2.6.4)
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer test
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - application/json; charset=UTF-8
+      vary:
+      - Origin
+      date:
+      - Sun, 01 Sep 2019 15:15:01 GMT
+      content-length:
+      - '5'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: 'null
+
+'
+    http_version: 
+  recorded_at: Sun, 01 Sep 2019 15:15:01 GMT
+- request:
+    method: post
+    uri: http://localhost:8080/v1/domains
+    body:
+      encoding: UTF-8
+      string: '{"name":"create-domain-duplicate-entry.com"}'
+    headers:
+      User-Agent:
+      - pir5/0.1.0 (+https://github.com/pir5/pir5-rb; ruby2.6.4)
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer test
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - application/json; charset=UTF-8
+      vary:
+      - Origin
+      date:
+      - Sun, 01 Sep 2019 15:15:01 GMT
+      content-length:
+      - '101'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Number":1062,"Message":"Duplicate entry ''create-domain-duplicate-entry.com''
+        for key ''name_index''"}
+
+'
+    http_version: 
+  recorded_at: Sun, 01 Sep 2019 15:15:01 GMT
+recorded_with: VCR 5.0.0
